@@ -84,7 +84,7 @@ def inject_inline(html: str, block: str) -> str:
     # 2) 如果都没命中，就放在 </body> 前（兜底，仍是非 fixed）
     return inject_before_body_close(html, block, "inline")
 
-def wrap_popup_with_cooldown(code: str, hours: int = 6) -> str:
+def wrap_popup_with_cooldown(code: str, hours: int = 1) -> str:
     """在不改联盟代码的前提下，加一层本地频控（localStorage）。"""
     wrapper = f"""
 <script>
